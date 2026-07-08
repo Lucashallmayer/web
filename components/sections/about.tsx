@@ -6,7 +6,7 @@ import { Reveal } from '@/components/reveal'
 import { SectionLabel } from '@/components/primitives'
 
 const CREDENTIALS = [
-  'Formación en ENFAF, HIGH Fitness, Fit Generation (avaladas por universidades europeas)',
+  'Formación en ENFAF y Fit Generation (avaladas por universidades europeas) y HIGH Fitness',
   'Competidor INBA/PNBA (culturismo natural)',
   '+8 años como entrenador online',
   '+75 transformaciones documentadas',
@@ -26,8 +26,8 @@ export function About() {
             Lucas Hällmayer.
           </h2>
           <p className="mt-5 text-pretty text-lg font-medium text-foreground">
-            Entrenador online especializado en recomposición corporal. 8 años.
-            +75 clientes analizados uno por uno.
+            Entrenador online especializado en aplicación de ciencia y salud. 8 años.
++75 clientes analizados uno por uno.
           </p>
 
           <div className="mt-8 space-y-5 text-sm leading-relaxed text-muted-foreground md:text-base">
