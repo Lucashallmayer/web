@@ -66,7 +66,7 @@ Para adultos que ya entrenan pero no ven cambios reales.
           >
             <Image
               src="/hero.png"
-              alt="Lucas Hällmayer, entrenador online especializado en recomposición corporal"
+              alt="Lucas Hällmayer, entrenador online especializado en aplicación de ciencia y salud"
               fill
               priority
               sizes="(max-width: 768px) 100vw, 40vw"
