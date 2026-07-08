@@ -75,13 +75,13 @@ export function About() {
               className="object-cover"
             />
           </div>
-          <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-border bg-card">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-border bg-card">
             <Image
               src="/about-inba.png"
               alt="Lucas Hällmayer compitiendo en culturismo natural INBA/PNBA"
               fill
               sizes="(max-width: 768px) 100vw, 45vw"
-              className="object-cover"
+              className="object-cover object-top"
             />
           </div>
           <figure className="flex items-center gap-4">
