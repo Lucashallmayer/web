@@ -30,9 +30,8 @@ export function Hero() {
           </h1>
 
           <p className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
-            Entrenador online especializado en recomposición corporal. Análisis
-            biomecánico, progresión medida semana a semana y ciencia aplicada.
-            Para adultos que ya entrenan pero no ven cambios reales.
+            Entrenador online especializado en aplicación de ciencia y salud. Análisis biomecánico, progresión medida semana a semana y ciencia aplicada.
+Para adultos que ya entrenan pero no ven cambios reales.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
