@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: 'Lucas Hällmayer · Entrenador Online | Recomposición Corporal',
+  title: 'Lucas Hällmayer · Entrenador Online | Ciencia Aplicada al Entrenamiento',
   description:
-    'Entrenador online especializado en aplicación de ciencia y salud. Análisis biomecánico, progresión medida semana a semana y ciencia aplicada. Para adultos que ya entrenan pero no ven cambios reales.',
+    'Entrenamiento y nutrición basados en ciencia, con revisión semanal de cada detalle. Para adultos que ya entrenan pero no ven cambios reales.',
   generator: 'v0.app',
 }
 
