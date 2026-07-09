@@ -17,13 +17,13 @@ export function Testimonials() {
       <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {TESTI.map((n, i) => (
           <Reveal key={n} delay={i * 0.1}>
-            <div className="relative aspect-[9/16] overflow-hidden rounded-2xl border border-border bg-card">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-border bg-card">
               <Image
                 src={`/testi-${n}.png`}
                 alt={`Testimonio de cliente ${n} por WhatsApp`}
                 fill
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="object-cover"
+                className="object-contain"
               />
             </div>
           </Reveal>
