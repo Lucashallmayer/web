@@ -22,7 +22,7 @@ export function Hero() {
           className="order-2 md:order-1"
         >
           <p className="text-xs font-medium uppercase leading-relaxed tracking-[0.22em] text-muted-foreground">
-            Recomposición corporal · Ciencia aplicada · +75 transformaciones
+            Ciencia aplicada · Revisión semanal · +75 transformaciones
           </p>
 
           <h1 className="mt-6 text-balance font-black leading-[0.98] tracking-tight text-foreground text-4xl sm:text-5xl md:text-6xl">
@@ -30,13 +30,14 @@ export function Hero() {
           </h1>
 
           <p className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
-            Entrenador online especializado en aplicación de ciencia y salud. Análisis biomecánico, progresión medida semana a semana y ciencia aplicada.
-Para adultos que ya entrenan pero no ven cambios reales.
+            Entrenamiento y nutrición basados en ciencia, con revisión semanal
+            de cada detalle. Para adultos que ya entrenan pero no ven cambios
+            reales.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
             <WhatsAppButton>Empezar ahora →</WhatsAppButton>
-            <a
+            
               href="#proceso"
               onClick={scrollToProcess}
               className="inline-flex items-center justify-center rounded-full border border-border px-7 py-3.5 text-sm font-medium tracking-wide text-foreground transition-all duration-300 hover:scale-[1.02] hover:bg-secondary"
@@ -45,36 +46,36 @@ Para adultos que ya entrenan pero no ven cambios reales.
             </a>
           </div>
 
-          <p className="mt-6 text-sm text-muted-foreground">
+          <p className="mt-4 text-sm text-muted-foreground">
+            Empezás con una semana de prueba, no un compromiso a ciegas.
+          </p>
+
+          <p className="mt-3 text-sm text-muted-foreground">
             <span className="text-foreground">⭐</span> Escribime por WhatsApp.
             Respondo en menos de 24hs.
           </p>
         </motion.div>
 
         {/* Right */}
-        <motion.div
-          initial={{ opacity: 0, scale: 1.04 }}
+        <motion.a
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="order-1 md:order-2"
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+          className="group relative order-1 block aspect-[3/4] w-full max-w-md overflow-hidden rounded-2xl md:order-2 md:ml-auto"
         >
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative block aspect-[3/4] w-full max-w-md overflow-hidden rounded-2xl md:ml-auto"
-          >
-            <Image
-              src="/hero.png"
-              alt="Lucas Hällmayer, entrenador online especializado en aplicación de ciencia y salud"
-              fill
-              priority
-              sizes="(max-width: 768px) 100vw, 40vw"
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent" />
-          </a>
-        </motion.div>
+          <Image
+            src="/hero.png"
+            alt="Lucas Hällmayer, entrenador online especializado en entrenamiento y nutrición basados en ciencia"
+            fill
+            priority
+            sizes="(max-width: 768px) 100vw, 45vw"
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-transparent to-transparent" />
+        </motion.a>
       </div>
     </section>
   )
