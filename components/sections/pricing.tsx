@@ -36,7 +36,7 @@ export function Pricing() {
               Entrenamiento + Nutrición + Feedback semanal
             </p>
             <p className="mt-6 font-black tracking-tight text-foreground text-4xl md:text-5xl">
-              $100.000 ARS{' '}
+              $120.000 ARS{' '}
               <span className="text-lg font-medium text-muted-foreground">
                 / mes
               </span>
