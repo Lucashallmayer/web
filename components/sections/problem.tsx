@@ -1,6 +1,7 @@
 'use client'
 
 import { Reveal } from '@/components/reveal'
+import { Accent } from '@/components/primitives'
 
 const CARDS = [
   {
@@ -25,7 +26,7 @@ export function Problem() {
     <section className="mx-auto max-w-6xl px-5 py-24 md:px-8 md:py-32">
       <Reveal className="mx-auto max-w-3xl text-center">
         <h2 className="text-balance font-black leading-[1.02] tracking-tight text-foreground text-3xl sm:text-4xl md:text-5xl">
-          Probaste esto y no funcionó.
+          Probaste esto y <Accent>no funcionó.</Accent>
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
           La mayoría de la gente que llega a mí probó tres cosas antes. Y las

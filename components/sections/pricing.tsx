@@ -2,23 +2,30 @@
 
 import { Check } from 'lucide-react'
 import { Reveal } from '@/components/reveal'
-import { SectionLabel, WhatsAppButton } from '@/components/primitives'
+import { Accent, SectionLabel, WhatsAppButton } from '@/components/primitives'
+import {
+  PRICE_CURRENCY,
+  PRICE_MONTH,
+  PRICE_TRIAL,
+  WA_MESSAGES,
+  waLink,
+} from '@/lib/site'
 
 const FEATURES = [
   'Rutina diseñada según tu biomecánica y las máquinas de tu gimnasio',
-  'Revisión semanal en video de cada entrenamiento, dedicada a ajustar tu plan (25-30 min)',
+  'Feedback semanal grabado en video de cada entrenamiento, dedicado a ajustar tu plan (25-30 min)',
   'Plan nutricional ajustado a tus hábitos reales',
   'Dudas y ajustes por WhatsApp, sin límite',
-  'Se paga a mes futuro. Cancelás cuando quieras.',
+  'Se paga mes a mes, por adelantado. Cancelás cuando quieras.',
 ]
 
 export function Pricing() {
   return (
-    <section className="mx-auto max-w-6xl px-5 py-24 md:px-8 md:py-32">
+    <section id="precio" className="mx-auto max-w-6xl scroll-mt-20 px-5 py-24 md:px-8 md:py-32">
       <Reveal className="mx-auto max-w-2xl text-center">
         <SectionLabel>La inversión</SectionLabel>
         <h2 className="mt-5 text-balance font-black leading-[1.02] tracking-tight text-foreground text-3xl sm:text-4xl md:text-5xl">
-          Pocos clientes. Trato de verdad.
+          Pocos clientes. <Accent>Trato de verdad.</Accent>
         </h2>
         <p className="mx-auto mt-6 max-w-xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
           Manejo un número limitado de clientes por mes. No es estrategia de
@@ -35,13 +42,15 @@ export function Pricing() {
             <p className="mt-2 text-sm text-muted-foreground">
               Entrenamiento + Nutrición + Feedback semanal
             </p>
-            <p className="mt-6 font-black tracking-tight text-foreground text-4xl md:text-5xl">
-              $120.000 ARS{' '}
-              <span className="text-lg font-medium text-muted-foreground">
-                / mes
+            <p className="mt-6 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+              <span className="font-black leading-none tracking-tight text-foreground text-5xl md:text-6xl">
+                {PRICE_MONTH}
+              </span>
+              <span className="text-base font-medium text-muted-foreground md:text-lg">
+                {PRICE_CURRENCY} / mes
               </span>
             </p>
-            <p className="mt-2 text-xs text-muted-foreground">
+            <p className="mt-3 text-xs text-muted-foreground">
               (consultar equivalente en USD/EUR para clientes fuera de
               Argentina)
             </p>
@@ -61,14 +70,23 @@ export function Pricing() {
               ))}
             </ul>
 
-            <div className="mt-8 rounded-2xl border border-accent/40 bg-accent/10 p-5">
-              <p className="text-sm font-medium leading-relaxed text-foreground">
-                Semana de prueba: $40.000 ARS. Si te quedás, se descuenta del
-                primer mes.
-              </p>
-            </div>
+            {/* La semana de prueba ahora es un enlace: abre WhatsApp con ese pedido ya escrito */}
+            <a
+              href={waLink(WA_MESSAGES.trial)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-8 block rounded-2xl border border-accent/40 bg-accent/10 p-5 transition-colors duration-300 hover:bg-accent/15 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+            >
+              <span className="block text-sm font-medium leading-relaxed text-foreground">
+                Semana de prueba: {PRICE_TRIAL} {PRICE_CURRENCY}. Si te quedás,
+                se descuenta del primer mes.
+              </span>
+              <span className="mt-2 block text-sm font-medium text-accent">
+                Empezar con la semana de prueba →
+              </span>
+            </a>
 
-            <WhatsAppButton className="mt-8 w-full">
+            <WhatsAppButton icon className="mt-4 w-full">
               Empezar ahora →
             </WhatsAppButton>
           </div>

@@ -1,4 +1,5 @@
 import { Navbar } from '@/components/navbar'
+import { StickyCta } from '@/components/sticky-cta'
 import { Hero } from '@/components/sections/hero'
 import { SocialProof } from '@/components/sections/social-proof'
 import { Problem } from '@/components/sections/problem'
@@ -30,6 +31,7 @@ export default function Page() {
         <FinalCta />
       </main>
       <Footer />
+      <StickyCta />
     </>
   )
 }

@@ -26,8 +26,8 @@ export function About() {
             Lucas Hällmayer.
           </h2>
           <p className="mt-5 text-pretty text-lg font-medium text-foreground">
-            Entrenamiento y nutrición basados en ciencia, con revisión semanal
-            de cada detalle. 8 años. +75 clientes analizados uno por uno.
+            Entrenamiento y nutrición basados en ciencia, con feedback semanal
+            grabado en video. 8 años. +75 clientes analizados uno por uno.
           </p>
 
           <div className="mt-8 space-y-5 text-sm leading-relaxed text-muted-foreground md:text-base">
@@ -66,29 +66,32 @@ export function About() {
 
         {/* Right: images */}
         <Reveal delay={0.1} className="flex flex-col gap-5">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-border bg-card">
-            <Image
-              src="/about-main.png"
-              alt="Retrato de Lucas Hällmayer, entrenador online"
-              fill
-              sizes="(max-width: 768px) 100vw, 45vw"
-              className="object-cover"
-            />
-          </div>
-          <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-border bg-card">
-            <Image
-              src="/about-inba.png"
-              alt="Lucas Hällmayer compitiendo en culturismo natural INBA/PNBA"
-              fill
-              sizes="(max-width: 768px) 100vw, 45vw"
-              className="object-cover object-top"
-            />
+          {/* en mobile las dos fotos van lado a lado para no ocupar dos pantallas */}
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-1 md:gap-5">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-border bg-card">
+              <Image
+                src="/about-main.png"
+                alt="Retrato de Lucas Hällmayer, entrenador online"
+                fill
+                sizes="(max-width: 768px) 50vw, 45vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-border bg-card">
+              <Image
+                src="/about-inba.png"
+                alt="Lucas Hällmayer compitiendo en culturismo natural INBA/PNBA"
+                fill
+                sizes="(max-width: 768px) 50vw, 45vw"
+                className="object-cover object-top"
+              />
+            </div>
           </div>
           <figure className="flex items-center gap-4">
             <div className="relative size-24 shrink-0 overflow-hidden rounded-xl border border-border bg-card">
               <Image
                 src="/about-mate.png"
-                alt="Lucas tomando mate en Buenos Aires"
+                alt="Lucas tomando mate frente a un lago"
                 fill
                 sizes="96px"
                 className="object-cover"

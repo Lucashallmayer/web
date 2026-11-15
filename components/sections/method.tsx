@@ -1,26 +1,31 @@
 'use client'
 
+import { Check, X } from 'lucide-react'
 import { Reveal } from '@/components/reveal'
-import { SectionLabel } from '@/components/primitives'
+import { Accent, SectionLabel } from '@/components/primitives'
 
-const CARDS = [
+// Cada fila contrasta lo que pasa entrenando por tu cuenta con el pilar del método.
+const ROWS = [
   {
-    icon: '🔬',
+    alone:
+      'Seguís una rutina pensada para otro cuerpo: la de una app, una IA o el entrenador del gym.',
     title: 'Análisis biomecánico',
     body: 'Fotos y videos de tu físico, tus proporciones y tu gimnasio. Elijo los ejercicios que le sirven a tu cuerpo, no los que están de moda. Si tenés lesiones, las respetamos y trabajamos alrededor.',
   },
   {
-    icon: '📈',
+    alone:
+      'Entrenás fuerte, pero nadie mira tus registros ni te dice qué ajustar.',
     title: 'Progresión medida semana a semana',
     body: 'Cada semana grabo un feedback de 25-30 minutos analizando tu plan al detalle: cargas, técnica, registros y percepciones. No es un audio genérico, es una sesión completa dedicada exclusivamente a vos. Preparate un mate porque hay mucho que analizar.',
   },
   {
-    icon: '🫘',
+    alone: 'Saltás de dieta en dieta: bajás, subís y volvés a empezar.',
     title: 'Nutrición basada en tus hábitos',
     body: 'Nada de dietas imposibles. Trabajamos con los alimentos que ya comés, ajustando macros y timing según tu progreso semanal.',
   },
   {
-    icon: '⚙️',
+    alone:
+      'Repetís el mismo plan durante meses, aunque hayas dejado de progresar.',
     title: 'Ajuste continuo',
     body: 'Ninguna rutina es perfecta hasta que se pone a prueba. Al primer mes revisamos todo y afinamos. Es un proceso vivo, no un PDF que te mando y desaparezco.',
   },
@@ -33,7 +38,7 @@ export function Method() {
         <Reveal className="max-w-3xl">
           <SectionLabel>El método</SectionLabel>
           <h2 className="mt-5 text-balance font-black leading-[1.02] tracking-tight text-foreground text-3xl sm:text-4xl md:text-5xl">
-            Así aseguramos tu transformación.
+            Así aseguramos <Accent>tu transformación.</Accent>
           </h2>
           <p className="mt-6 max-w-2xl text-pretty text-base leading-relaxed text-muted-foreground md:text-lg">
             Cuatro pilares. Sin atajos. Sin humo. Solo lo que la ciencia dice
@@ -41,19 +46,46 @@ export function Method() {
           </p>
         </Reveal>
 
-        <div className="mt-14 grid grid-cols-1 gap-5 md:grid-cols-2">
-          {CARDS.map((card, i) => (
-            <Reveal key={card.title} delay={(i % 2) * 0.1}>
-              <article className="flex h-full flex-col rounded-2xl border border-border bg-card p-8 transition-colors duration-300 hover:border-white/15 md:p-10">
-                <span className="text-3xl" aria-hidden="true">
-                  {card.icon}
-                </span>
-                <h3 className="mt-6 text-xl font-bold text-foreground">
-                  {card.title}
-                </h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {card.body}
-                </p>
+        {/* encabezado de columnas, solo en pantallas grandes */}
+        <div className="mt-14 hidden grid-cols-[2fr_3fr] px-px text-xs font-medium uppercase tracking-[0.22em] md:grid">
+          <p className="px-8 text-muted-foreground">Por tu cuenta</p>
+          <p className="px-8 text-accent">Conmigo</p>
+        </div>
+
+        <div className="mt-14 flex flex-col gap-4 md:mt-5">
+          {ROWS.map((row, i) => (
+            <Reveal key={row.title} delay={i * 0.05}>
+              <article className="grid overflow-hidden rounded-2xl border border-border transition-colors duration-300 hover:border-white/15 md:grid-cols-[2fr_3fr]">
+                <div className="flex gap-3.5 border-b border-border p-6 md:border-b-0 md:border-r md:p-8">
+                  <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-white/[0.06] text-muted-foreground">
+                    <X className="size-3" aria-hidden="true" />
+                  </span>
+                  <div>
+                    <p className="mb-1.5 text-[10px] font-medium uppercase tracking-[0.2em] text-muted-foreground md:hidden">
+                      Por tu cuenta
+                    </p>
+                    <p className="text-pretty text-sm leading-relaxed text-muted-foreground md:text-base">
+                      {row.alone}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex gap-3.5 bg-card p-6 md:p-8">
+                  <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-accent/15 text-accent">
+                    <Check className="size-3" aria-hidden="true" />
+                  </span>
+                  <div>
+                    <p className="mb-1.5 text-[10px] font-medium uppercase tracking-[0.2em] text-accent md:hidden">
+                      Conmigo
+                    </p>
+                    <h3 className="text-lg font-bold text-foreground md:text-xl">
+                      {row.title}
+                    </h3>
+                    <p className="mt-2.5 text-sm leading-relaxed text-muted-foreground">
+                      {row.body}
+                    </p>
+                  </div>
+                </div>
               </article>
             </Reveal>
           ))}

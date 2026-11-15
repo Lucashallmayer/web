@@ -2,8 +2,33 @@
 
 import Image from 'next/image'
 import { Reveal } from '@/components/reveal'
+import { CtaBand } from '@/components/primitives'
 
-const TESTI = [1, 2, 3]
+// Medidas reales de cada captura: se muestran completas, sin franjas vacías.
+const TESTI = [
+  {
+    n: 1,
+    w: 824,
+    h: 690,
+    alt: 'Mensaje de WhatsApp de un cliente: "me pude sacar el miedo e hice con barra olímpica"',
+    caption: '«Me pude sacar el miedo e hice con barra olímpica.»',
+  },
+  {
+    n: 2,
+    w: 824,
+    h: 1094,
+    alt: 'Mensaje de WhatsApp de una clienta que compara sus fotos de febrero de 2024 y febrero de 2026: "me quedé sin palabras, estoy sorprendida"',
+    caption: 'Febrero de 2024 y febrero de 2026: «me quedé sin palabras».',
+  },
+  {
+    n: 3,
+    w: 824,
+    h: 1232,
+    alt: 'Mensajes de WhatsApp de clientes: una primera dominada, 100 kg en peso muerto y "lograste que disfrute el día de piernas"',
+    caption:
+      'Su primera dominada, los 100 kg en peso muerto y hasta disfrutar el día de piernas.',
+  },
+]
 
 export function Testimonials() {
   return (
@@ -14,21 +39,33 @@ export function Testimonials() {
         </h2>
       </Reveal>
 
-      <div className="mt-14 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {TESTI.map((n, i) => (
-          <Reveal key={n} delay={i * 0.1}>
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-border bg-card">
-              <Image
-                src={`/testi-${n}.png`}
-                alt={`Testimonio de cliente ${n} por WhatsApp`}
-                fill
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                className="object-contain"
-              />
-            </div>
+      <div className="mt-14 grid grid-cols-1 items-start gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        {TESTI.map((t, i) => (
+          <Reveal key={t.n} delay={i * 0.1}>
+            <figure>
+              <div className="overflow-hidden rounded-2xl border border-border bg-card">
+                <Image
+                  src={`/testi-${t.n}.png`}
+                  alt={t.alt}
+                  width={t.w}
+                  height={t.h}
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="h-auto w-full"
+                />
+              </div>
+              <figcaption className="mt-3 text-pretty text-sm leading-relaxed text-muted-foreground">
+                {t.caption}
+              </figcaption>
+            </figure>
           </Reveal>
         ))}
       </div>
+
+      <Reveal className="mt-16 md:mt-20">
+        <CtaBand note="Empezás con una semana de prueba, no un compromiso a ciegas.">
+          Empezar ahora →
+        </CtaBand>
+      </Reveal>
     </section>
   )
 }
