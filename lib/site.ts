@@ -5,8 +5,8 @@ export const SITE_URL = 'https://hallmayercoach.vercel.app'
 
 export const WHATSAPP_NUMBER = '5491169228492'
 
-export const PRICE_MONTH = '$120.000'
-export const PRICE_TRIAL = '$40.000'
+export const PRICE_MONTH = '$150.000'
+export const PRICE_TRIAL = '$50.000'
 export const PRICE_CURRENCY = 'ARS'
 
 // Mensaje que llega precargado al WhatsApp según el botón que tocó la persona.
